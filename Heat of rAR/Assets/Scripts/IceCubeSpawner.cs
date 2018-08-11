@@ -28,9 +28,9 @@ public class IceCubeSpawner : MonoBehaviour {
 
         if (Time.time - lastSpawnTime > spawnTime)
         {
-            float x = Random.Range(-gameWidth / 2.0f, gameWidth / 2.0f);
             float z = Random.Range(-gameHeight / 2.0f, gameHeight / 2.0f);
-            GameObject icecube = Instantiate(icecubePrefab, new Vector3(x, 0.0f, z), Quaternion.identity);
+            GameObject icecube = Instantiate(icecubePrefab, transform);
+            icecube.transform.localPosition = new Vector3(0.0f, 0.0f, z);
             lastSpawnTime = Time.time;
         }
 	}
