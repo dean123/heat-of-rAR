@@ -35,6 +35,13 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 4617031546179186}
+  - component: {fileID: 33586776596510200}
+  - component: {fileID: 23352709725189120}
+  - component: {fileID: 65037304507557174}
+  - component: {fileID: 114431522473386240}
+=======
   - component: {fileID: 224934026293423962}
   - component: {fileID: 223759860143731230}
   - component: {fileID: 114012854147913402}
@@ -91,6 +98,7 @@ GameObject:
   - component: {fileID: 33008273688954392}
   - component: {fileID: 23789316975877894}
   - component: {fileID: 65156004884791350}
+>>>>>>> 268a0cd932bc2a3afdbdd9f5fb6afe3f83d67f9a
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -165,12 +173,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314105503569512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 0, y: 0.025, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children: []
+  m_Father: {fileID: 4207654164061814}
+=======
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4346705433935930}
   - {fileID: 224934026293423962}
   m_Father: {fileID: 0}
+>>>>>>> 268a0cd932bc2a3afdbdd9f5fb6afe3f83d67f9a
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23789316975877894
@@ -227,11 +242,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!114 &114431522473386240
+=======
 --- !u!114 &114012854147913402
+>>>>>>> 268a0cd932bc2a3afdbdd9f5fb6afe3f83d67f9a
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1125847341024788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c5e40f99c238a4492a0fdc6e8ad9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
+--- !u!114 &114688266374178540
+=======
   m_GameObject: {fileID: 1199822733117840}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -276,6 +305,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!114 &114191969642590840
+>>>>>>> 268a0cd932bc2a3afdbdd9f5fb6afe3f83d67f9a
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
