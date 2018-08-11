@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Icecube : MonoBehaviour {
 
-    public float health = 100.0f;
-    public float maxHealth = 100.0f;
+    [SerializeField]
+    private float health = 100.0f;
+
+    [SerializeField]
+    private float maxHealth = 100.0f;
 
 	// Use this for initialization
 	void Start ()
     {
-        transform.position = new Vector3(
-            transform.position.x,
-            transform.localScale.y / 2.0f,
-            transform.position.z
-        );
 	}
 	
 	// Update is called once per frame
@@ -27,10 +25,10 @@ public class Icecube : MonoBehaviour {
         }
 
         float relativeHealth = health / maxHealth;
-        transform.position = new Vector3(
-            transform.position.x,
-            (transform.localScale.y * relativeHealth) - (transform.localScale.y / 2.0f),
-            transform.position.z
+        transform.localScale = new Vector3(
+            transform.localScale.x,
+            relativeHealth,
+            transform.localScale.z
         );
     }
 
