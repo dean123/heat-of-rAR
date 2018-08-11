@@ -73,6 +73,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4785092668887624}
   - component: {fileID: 114378176655083014}
+  - component: {fileID: 114421951443023038}
+  - component: {fileID: 54552022949170326}
+  - component: {fileID: 65133917546288998}
   m_Layer: 0
   m_Name: Icecube
   m_TagString: Untagged
@@ -106,7 +109,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4346705433935930}
-  - component: {fileID: 114267717749857082}
   m_Layer: 0
   m_Name: CubeOrigin
   m_TagString: Untagged
@@ -216,6 +218,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830310843715588}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54552022949170326
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314105503569512}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65133917546288998
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314105503569512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65156004884791350
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -292,18 +321,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114267717749857082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1859356062523688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c5e40f99c238a4492a0fdc6e8ad9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.01
 --- !u!114 &114378176655083014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,6 +335,18 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   shakeStrength: 0.1
+--- !u!114 &114421951443023038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314105503569512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c5e40f99c238a4492a0fdc6e8ad9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
 --- !u!114 &114594308992777972
 MonoBehaviour:
   m_ObjectHideFlags: 1
