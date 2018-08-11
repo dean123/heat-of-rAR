@@ -14,6 +14,12 @@ public class Icecube : MonoBehaviour {
     [SerializeField]
     private float shakeStrength = 1.0f;
 
+    [SerializeField]
+    Color fullColor;
+
+    [SerializeField]
+    Color emptyColor;
+
     private List<string> names = new List<string>();
     private Transform cubeOrigin;
     private Transform healthBar;
@@ -49,8 +55,8 @@ public class Icecube : MonoBehaviour {
         );
 
         // Change cube color
-        GetComponentInChildren<Renderer>().material.color = new Color(0.0f, 0.0f, relativeHealth);
-
+        GetComponentInChildren<Renderer>().material.color = Color.Lerp(fullColor, emptyColor, relativeHealth);
+        
         // Scale inner health bar
         healthBar.localScale = new Vector3(
             relativeHealth,
@@ -100,8 +106,14 @@ public class Icecube : MonoBehaviour {
     }
 
     // Here the enemy hits the player
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("bla");
+            GetComponentInChildren<Animator>().SetTrigger("Attack");
+            collision.gameObject.GetComponent<BaseController>().Damage();
+            Destroy(gameObject);
+        }
     }
 }
