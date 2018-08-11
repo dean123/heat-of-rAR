@@ -17,6 +17,7 @@ public class Icecube : MonoBehaviour {
     private List<string> names = new List<string>();
     private Transform cubeOrigin;
     private Transform healthBar;
+    private RectTransform myCanvas;
 
 	// Use this for initialization
 	void Start ()
@@ -26,6 +27,7 @@ public class Icecube : MonoBehaviour {
 
         cubeOrigin = transform.Find("CubeOrigin");
         healthBar = transform.Find("Canvas/HealthBarOuter/HealthBarInner");
+        myCanvas = GetComponentInChildren<RectTransform>();
     }
 	
 	// Update is called once per frame
@@ -55,6 +57,8 @@ public class Icecube : MonoBehaviour {
             healthBar.localScale.y,
             healthBar.localScale.z
         );
+
+        myCanvas.transform.LookAt(Camera.main.transform);
 
         //transform.Rotate(new Vector3(1.0f, 0.0f, 1.0f), Mathf.Sin(Time.time) * shakeStrength);
     }

@@ -12,6 +12,6 @@ public class IceCubeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.localPosition += new Vector3(-speed * Time.deltaTime, 0, 0); 
+        transform.parent.localPosition += new Vector3(-speed * Time.deltaTime, 0, 0); 
 	}
 }
