@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShamanController : MonoBehaviour {
     public static ShamanController shamanMain;
 
-    private MeshRenderer mr;
+
     public readonly int ShamanNumber = 7;
     private bool activated = false;
     public Transform evilPosition;
@@ -17,12 +17,6 @@ public class ShamanController : MonoBehaviour {
     }
 
 
-    // Use this for initialization
-    void Start () {
-        mr = GetComponent<MeshRenderer>();
-        mr.enabled = false;
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		
@@ -39,7 +33,7 @@ public class ShamanController : MonoBehaviour {
             Vector3 pos = new Vector3(x, 0.0f, z);
             transform.localPosition = pos;
             evilPosition = transform;
-            mr.enabled = true;
+    
         }
 
     }
