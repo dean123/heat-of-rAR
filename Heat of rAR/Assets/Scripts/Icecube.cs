@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Icecube : MonoBehaviour {
 
@@ -10,10 +11,22 @@ public class Icecube : MonoBehaviour {
     [SerializeField]
     private float maxHealth = 100.0f;
 
+    [SerializeField]
+    private float shakeStrength = 1.0f;
+
+    private List<string> names = new List<string>();
+    private Transform cubeOrigin;
+    private Transform healthBar;
+
 	// Use this for initialization
 	void Start ()
     {
-	}
+        createRandomNames();
+        GetComponentInChildren<Text>().text = getRandomName();
+
+        cubeOrigin = transform.Find("CubeOrigin");
+        healthBar = transform.Find("Canvas/HealthBarOuter/HealthBarInner");
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -25,15 +38,60 @@ public class Icecube : MonoBehaviour {
         }
 
         float relativeHealth = health / maxHealth;
-        transform.localScale = new Vector3(
-            transform.localScale.x,
+
+        // Scale cube mesh
+        cubeOrigin.localScale = new Vector3(
+            cubeOrigin.localScale.x,
             relativeHealth,
-            transform.localScale.z
+            cubeOrigin.localScale.z
         );
+
+        // Change cube color
+        GetComponentInChildren<Renderer>().material.color = new Color(0.0f, 0.0f, relativeHealth);
+
+        // Scale inner health bar
+        healthBar.localScale = new Vector3(
+            relativeHealth,
+            healthBar.localScale.y,
+            healthBar.localScale.z
+        );
+
+        //transform.Rotate(new Vector3(1.0f, 0.0f, 1.0f), Mathf.Sin(Time.time) * shakeStrength);
     }
 
     public void Damage ()
     {
         health--;
+    }
+
+    private string getRandomName()
+    {
+        int index = Random.Range(0, names.Count - 1);
+        return names[index];
+    }
+
+    private void createRandomNames()
+    {
+        names.Add("Ice Cube");
+        names.Add("Ice T");
+        names.Add("Janina");
+        names.Add("Katharina");
+        names.Add("Stephan");
+        names.Add("Paul");
+        names.Add("René");
+        names.Add("Katharina");
+        names.Add("Peter");
+        names.Add("Uwe");
+        names.Add("Florian");
+        names.Add("Steffen");
+        names.Add("Ulrich");
+        names.Add("Tim");
+        names.Add("Sven");
+        names.Add("Monika");
+        names.Add("Christina");
+        names.Add("Birgit");
+        names.Add("Uta");
+        names.Add("Katrin");
+        names.Add("Jana");
     }
 }
