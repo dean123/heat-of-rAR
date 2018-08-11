@@ -17,9 +17,9 @@ public class HeatController : MonoBehaviour {
     private void FixedUpdate()
     {
         var hit = new RaycastHit();
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
         {
-            var component = hit.transform.GetComponentInParent<Icecube>();
+            Icecube component = hit.transform.GetComponentInParent<Icecube>();
             if (component != null) component.Damage();
         }
     }

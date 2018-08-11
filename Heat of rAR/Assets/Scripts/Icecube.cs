@@ -98,4 +98,10 @@ public class Icecube : MonoBehaviour {
         names.Add("Katrin");
         names.Add("Jana");
     }
+
+    // Here the enemy hits the player
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit");
+    }
 }
