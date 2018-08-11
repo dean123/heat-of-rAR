@@ -19,7 +19,7 @@ public class HeatController : MonoBehaviour {
         var hit = new RaycastHit();
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            var component = hit.transform.GetComponent<Icecube>();
+            var component = hit.transform.GetComponentInParent<Icecube>();
             if (component != null) component.Damage();
         }
     }
