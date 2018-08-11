@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icecubePrefab: {fileID: 1461686039578586, guid: 4d6d9359e5f49904f984778c271bbfb8,
     type: 2}
-  spawnTime: 5
+  spawnTime: 1
   gameWidth: 2
   gameHeight: 2

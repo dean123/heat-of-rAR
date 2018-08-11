@@ -31,6 +31,7 @@ public class IceCubeSpawner : MonoBehaviour {
             float z = Random.Range(-gameHeight / 2.0f, gameHeight / 2.0f);
             GameObject icecube = Instantiate(icecubePrefab, transform);
             icecube.transform.localPosition = new Vector3(0.0f, 0.0f, z);
+            Debug.Log(z);
             lastSpawnTime = Time.time;
         }
 	}
