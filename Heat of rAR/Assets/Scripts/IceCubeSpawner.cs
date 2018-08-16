@@ -8,6 +8,9 @@ public class IceCubeSpawner : MonoBehaviour {
     private GameObject icecubePrefab;
 
     [SerializeField]
+    private GameObject spawnArea;
+
+    [SerializeField]
     private float spawnTime = 1.0f;
 
     [SerializeField]

@@ -31,9 +31,9 @@ public class Icecube : MonoBehaviour {
         createRandomNames();
         GetComponentInChildren<Text>().text = getRandomName();
 
-        cubeOrigin = transform.Find("CubeOrigin");
-        healthBar = transform.Find("Canvas/HealthBarOuter/HealthBarInner");
-        myCanvas = GetComponentInChildren<RectTransform>();
+        cubeOrigin = transform.Find("CubeModel");
+        healthBar = transform.Find("CubeInformation/HealthBarOuter/HealthBarInner");
+        myCanvas = transform.Find("CubeInformation").GetComponent<RectTransform>();
     }
 	
 	// Update is called once per frame
@@ -50,12 +50,12 @@ public class Icecube : MonoBehaviour {
         // Scale cube mesh
         cubeOrigin.localScale = new Vector3(
             cubeOrigin.localScale.x,
-            relativeHealth,
+            relativeHealth * cubeOrigin.localScale.x,
             cubeOrigin.localScale.z
         );
 
         // Change cube color
-        GetComponentInChildren<Renderer>().material.color = Color.Lerp(fullColor, emptyColor, relativeHealth);
+        GetComponentInChildren<Renderer>().material.color = Color.Lerp(emptyColor, fullColor, relativeHealth);
         
         // Scale inner health bar
         healthBar.localScale = new Vector3(

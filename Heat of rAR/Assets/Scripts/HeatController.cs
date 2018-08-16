@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class HeatController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void FixedUpdate()
     {
-        var hit = new RaycastHit();
+        RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
         {
             Icecube component = hit.transform.GetComponentInParent<Icecube>();

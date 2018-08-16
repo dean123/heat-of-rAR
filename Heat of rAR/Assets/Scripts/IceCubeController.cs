@@ -21,14 +21,14 @@ public class IceCubeController : MonoBehaviour {
         //    Vector2 direction = Random.insideUnitCircle.normalized;
         //    destination.Translate(new Vector3(direction.x * 0.1f, 0.0f, direction.y * 0.1f));
         //}
-        rb.velocity = new Vector3(-speed, 0, 0);
+        //rb.velocity = new Vector3(-speed, 0, 0);
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
         float step = speed * Time.deltaTime;
-        if (myId == ShamanController.shamanMain.ShamanNumber)
+        if (/*myId == ShamanController.shamanMain.ShamanNumber*/ false)
         {
             if (Vector3.Distance(transform.position, destination.position) > distanceToStop)
             {
@@ -40,7 +40,7 @@ public class IceCubeController : MonoBehaviour {
         }
         else
         {
-            transform.position += (new Vector3(-step, 0, 0));
+            transform.position += new Vector3(-step, 0, 0);
         }
     }
 
