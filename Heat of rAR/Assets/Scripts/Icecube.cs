@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Icecube : MonoBehaviour {
 
     [SerializeField]
+    private float speed = 1.0f;
+
+    [SerializeField]
     private float health = 100.0f;
 
     [SerializeField]
@@ -25,8 +28,10 @@ public class Icecube : MonoBehaviour {
     private Transform healthBar;
     private RectTransform myCanvas;
 
-	// Use this for initialization
-	void Start ()
+    private bool enemyFound;
+
+    // Use this for initialization
+    void Start ()
     {
         createRandomNames();
         GetComponentInChildren<Text>().text = getRandomName();
@@ -69,7 +74,19 @@ public class Icecube : MonoBehaviour {
         //transform.Rotate(new Vector3(1.0f, 0.0f, 1.0f), Mathf.Sin(Time.time) * shakeStrength);
     }
 
-    public void Damage ()
+    void FixedUpdate()
+    {
+        if (!enemyFound)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position += new Vector3(-step, 0, 0);
+        }
+    }
+
+
+
+
+        public void Damage ()
     {
         health--;
     }
@@ -108,12 +125,13 @@ public class Icecube : MonoBehaviour {
     // Here the enemy hits the player
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Temple"))
         {
+            enemyFound = true;
             Debug.Log("bla");
             GetComponentInChildren<Animator>().SetTrigger("Attack");
             collision.gameObject.GetComponent<BaseController>().Damage();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
