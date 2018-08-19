@@ -79,7 +79,7 @@ public class Icecube : MonoBehaviour {
         if (!enemyFound)
         {
             float step = speed * Time.deltaTime;
-            transform.position += new Vector3(-step, 0, 0);
+            transform.position += new Vector3(0, 0, -step);
         }
     }
 
@@ -128,10 +128,16 @@ public class Icecube : MonoBehaviour {
         if (collision.gameObject.CompareTag("Temple"))
         {
             enemyFound = true;
-            Debug.Log("bla");
+          
             GetComponentInChildren<Animator>().SetTrigger("Attack");
-            collision.gameObject.GetComponent<BaseController>().Damage();
+            InvokeRepeating("makeDamage", 0, 1f);
+            
             //Destroy(gameObject);
         }
+    }
+
+    void makeDamage()
+    {
+        FindObjectOfType<BaseController>().Damage();
     }
 }

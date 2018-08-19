@@ -20,6 +20,7 @@ public class IceCubeSpawner : MonoBehaviour {
     private float gameHeight = 10.0f;
 
     private float lastSpawnTime;
+    private bool firstCube = true;
 
 	// Use this for initialization
 	void Start () {
@@ -29,13 +30,14 @@ public class IceCubeSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Time.time - lastSpawnTime > spawnTime)
+        if (Time.time - lastSpawnTime > spawnTime || firstCube)
         {
             float z = Random.Range(-gameHeight / 2.0f, gameHeight / 2.0f);
             GameObject icecube = Instantiate(icecubePrefab, transform);
             icecube.transform.localPosition = new Vector3(0.0f, 0.0f, z);
 
             lastSpawnTime = Time.time;
+            firstCube = false;
         }
 	}
 }
