@@ -32,9 +32,9 @@ public class IceCubeSpawner : MonoBehaviour {
 
         if (Time.time - lastSpawnTime > spawnTime || firstCube)
         {
-            float z = Random.Range(-gameHeight / 2.0f, gameHeight / 2.0f);
+            float x = Random.Range(-gameHeight / 2.0f, gameHeight / 2.0f);
             GameObject icecube = Instantiate(icecubePrefab, transform);
-            icecube.transform.localPosition = new Vector3(0.0f, 0.0f, z);
+            icecube.transform.localPosition = new Vector3(x, 0.0f, 0.0f);
 
             lastSpawnTime = Time.time;
             firstCube = false;

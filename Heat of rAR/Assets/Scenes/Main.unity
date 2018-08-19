@@ -836,6 +836,11 @@ Prefab:
       propertyPath: spawnArea
       value: 
       objectReference: {fileID: 218178971}
+    - target: {fileID: 114763309767175856, guid: 7551c8e9a11d78342834cce314711373,
+        type: 2}
+      propertyPath: spawnTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7551c8e9a11d78342834cce314711373, type: 2}
   m_IsPrefabAsset: 0
